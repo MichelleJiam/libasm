@@ -10,4 +10,5 @@ A main containing tests is included.
 
 ## Commands
 Run ```make test``` to compile and see the list of test commands.
+
 Run ```make bonus``` to compile with bonus functions.

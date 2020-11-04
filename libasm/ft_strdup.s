@@ -13,7 +13,7 @@ _ft_strdup:
     mov     rdi, rax                ; len as 1st param for malloc
     call    _malloc
     cmp     rax, 0
-    je      done                    ; ret if malloc fails, errno is set by malloc
+    je      errdone                 ; ret if malloc fails, errno is set by malloc
     pop     rdi
     mov     rdx, 0                  ; i = 0
 
@@ -27,3 +27,7 @@ dup:
 
 done:
     ret
+
+errdone:
+	pop		rdi
+	ret

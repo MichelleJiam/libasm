@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/25 16:47:35 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/07/08 12:54:50 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/11/04 15:22:45 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,19 +36,7 @@ char	*ft_strdup(const char *s1);
 int		bonus(char *av);
 
 /* bonuses */
-typedef struct		s_list
-{
-	void			*data;
-	struct s_list	*next;
-}					t_list;
-
 int		ft_atoi_base(const char *str, int str_base);
-void	ft_list_push_front(t_list **head, void *data);
-int		ft_list_size(t_list *head);
-void	ft_list_sort(t_list **head, int (*cmp)());
-void	ft_list_remove_if(t_list **head, void *data_ref, int (*cmp)());
-
-char	*ft_strchr(const char *str, int c);
 
 /*
 ** ft_atoi_base:

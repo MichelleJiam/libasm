@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.c                                             :+:    :+:            */
+/*   testmain.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/23 14:21:08 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/07/03 19:48:48 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/11/04 16:54:12 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int	dup_test(char *str)
 		printf("String: %s\nft_strdup: %s\n", str, dst);
 	dst2 = strdup(str);
 	err2 = errno;
-	printf("Errno set to %d\n", err1);
-	printf("Errno should be %d\n", err2);
+	printf("Errno set to %d: %s\n", err1, strerror(err1));
+	printf("Errno should be %d: %s\n", err2, strerror(err2));
 	add1 = (size_t)str;
 	add2 = (size_t)dst;
 	printf("Address of src: 0x%zx\nAddress of dst: 0x%zx\n", add1, add2);
@@ -70,8 +70,8 @@ int	read_test(int file, char *str, int len)
 	err2 = errno;
 	printf("String given: %s || bytes read: %d - %d\n",
 			(*str == '\0' ? "(null)" : str), ret1, ret2);
-	printf("Errno set to %d\n", err1);
-	printf("Errno should be %d\n", err2);
+	printf("Errno set to %d: %s\n", err1, strerror(err1));
+	printf("Errno should be %d: %s\n", err2, strerror(err2));
 	if (ret1 == ret2 && err1 == err2)
 		printf("" TURQ "(OK)" RES "\n");
 	else
@@ -94,8 +94,8 @@ int	wrt_test(int fd, char *str, int len)
 	write(fd, "\n", 1);
 	printf("String given: %s with len (%d)|| bytes written: %d - %d\n",
 			(*str == '\0' ? "(null)" : str), len, ret1, ret2);
-	printf("Errno set to %d\n", err1);
-	printf("Errno should be %d\n", err2);
+	printf("Errno set to %d: %s\n", err1, strerror(err1));
+	printf("Errno should be %d: %s\n", err2, strerror(err2));
 	if (ret1 == ret2 && err1 == err2)
 		printf("" TURQ "(OK)" RES "\n");
 	else
@@ -121,8 +121,8 @@ int	cmp_test(char *s1, char *s2)
 
 int	cpy_test(char *src)
 {
-	char	dst[100];
-	char	dst2[100];
+	char	dst[PATH_MAX];
+	char	dst2[PATH_MAX];
 
 	bzero(dst, 100);
 	bzero(dst2, 100);
@@ -170,7 +170,7 @@ int	main(int ac, char **av)
 		len_test("Hello, world!");
 		len_test("");
 		len_test("Hello \0 world");
-		len_test("0123456789abcdefABCDEF");
+		len_test("0123456789abcdefABCDEF0123456789abcdefABCDEF0123456789abcdefABCDEF0123456789abcdefABCDEF0123456789abcdefABCDEF0123456789abcdefABCDEF");
 		printf("===================\n");
 	}
 	if (!strcmp(av[1], "strcpy"))
@@ -181,7 +181,7 @@ int	main(int ac, char **av)
 		cpy_test("");
 		cpy_test("\n");
 		cpy_test("Hello \0 world");
-		cpy_test("0123456789abcdefABCDEF");
+		cpy_test("0123456789abcdefABCDEF0123456789abcdefABCDEF0123456789abcdefABCDEF0123456789abcdefABCDEF0123456789abcdefABCDEF0123456789abcdefABCDEF");
 		printf("===================\n");
 	}
 	if (!strcmp(av[1], "strcmp"))
@@ -236,12 +236,10 @@ int	main(int ac, char **av)
 		dup_test("\0");
 		dup_test("\n");
 		dup_test("Hello \0 world");
-		dup_test("0123456789abcdefABCDEF");
+		dup_test("0123456789abcdefABCDEF0123456789abcdefABCDEF0123456789abcdefABCDEF0123456789abcdefABCDEF0123456789abcdefABCDEF0123456789abcdefABCDEF");
 		printf("===================\n");
 	}
-	if (!strcmp(av[1], "atoi") || !strcmp(av[1], "lstpush") ||
-		!strcmp(av[1], "lstsize") || !strcmp(av[1], "lstsort") ||
-		!strcmp(av[1], "lstrem"))
+	if (!strcmp(av[1], "atoi"))
 		bonus(av[1]);
 	return (0);
 }

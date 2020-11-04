@@ -6,25 +6,14 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/25 16:47:35 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/07/02 20:01:08 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/11/04 15:17:18 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBASM_BONUS_H
 # define LIBASM_BONUS_H
-# include <stdio.h>
 
-typedef struct      s_list
-{
-    void            *data;
-    struct s_list   *next;
-}                   t_list;
-
-int     ft_atoi_base(const char *str, int str_base);
-void    ft_list_push_front(t_list **head, void *data);
-int     ft_list_size(t_list *head);
-void    ft_list_sort(t_list **head, int (*cmp)());
-void    ft_list_remove_if(t_list **head, void *data_ref, int (*cmp)());
+int	ft_atoi_base(const char *str, int str_base);
 
 /*
 ** ft_atoi_base:

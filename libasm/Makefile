@@ -6,7 +6,7 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/06/23 13:52:25 by mjiam         #+#    #+#                  #
-#    Updated: 2020/08/31 12:29:26 by mjiam         ########   odam.nl          #
+#    Updated: 2020/11/04 16:46:35 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,7 @@ $(NAME): $(OBJ)
 	@echo "\n\t   $(BLUE)$(LBOR)Compiling: $<$(RBOR)$(RES)\n"
 	@$(NSM) $<
 
-bonus: $(SRC_B)
+bonus: $(SRC_B:.s=.o) $(OBJ)
 	@echo "\n\t   $(PINK)$(LBOR)Compiling bonus files$(RBOR)$(RES)\n"
 	@$(MAKE) WITH_BONUS=1 all
 	@$(MAKE) test
@@ -86,5 +86,10 @@ re:
 	@echo "\n\t   $(BLUE)$(LBOR)Aww here we go again$(RBOR)$(RES)\n"
 	@$(MAKE) fclean
 	@$(MAKE) all
+
+re_bonus:
+	@echo "\n\t   $(BLUE)$(LBOR)Aww here we go again$(RBOR)$(RES)\n"
+	@$(MAKE) fclean
+	@$(MAKE) bonus
 
 .PHONY: all clean fclean re test bonus

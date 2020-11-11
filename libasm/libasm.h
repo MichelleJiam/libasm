@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/25 16:47:35 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/11/11 16:58:28 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/11/11 17:17:02 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,10 @@ char	*ft_strchr(const char *str, int c);
 /*
 ** ft_atoi_base:
 ** converts the string argument str (base N <= 16) to an int (base 10).
+**
+** ft_strchr:
+** returns a pointer to first occurence of c in string str,
+** or NULL if not found.
 **
 ** ft_list_push_front:
 ** adds a new element of type t_list to the beginning of the list.

@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/23 14:21:08 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/11/11 16:52:03 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/11/11 17:18:40 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -240,6 +240,8 @@ int	main(int ac, char **av)
 		printf("===================\n");
 	}
 	if (!strcmp(av[1], "atoi"))
+		bonus(av[1]);
+	if (!strcmp(av[1], "strchr"))
 		bonus(av[1]);
 	return (0);
 }

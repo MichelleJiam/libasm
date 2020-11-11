@@ -6,7 +6,7 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/06/23 13:52:25 by mjiam         #+#    #+#                  #
-#    Updated: 2020/11/11 16:56:38 by mjiam         ########   odam.nl          #
+#    Updated: 2020/11/11 18:43:26 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,13 +60,14 @@ test: $(MAIN) $(NAME) $(OBJ)
 	@echo "      |              ./test read                 |"
 	@echo "      |             ./test strdup                |"
 	@echo "      |              ./test atoi                 |"
+	@echo "      |             ./test strchr                |"
 	@echo "      |                                          |"
 	@echo "      ~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*"
 	@echo "$(RES)"
 
 clean:
 	@echo "\n\t   $(YELLOW)$(LBOR)Cleaning$(RBOR)$(RES)\n"
-	@rm -rf $(SRC_A:.s=.o) $(SRC_B:.s=.o)
+	@rm -rf $(OBJ)
 
 fclean: clean
 	@echo "\n\t   $(RES)$(LBOR)Clean af$(RBOR)$(RES)\n"

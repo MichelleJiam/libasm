@@ -6,29 +6,24 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/06/23 13:52:25 by mjiam         #+#    #+#                  #
-#    Updated: 2020/11/04 16:46:35 by mjiam         ########   odam.nl          #
+#    Updated: 2020/11/11 16:49:51 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= libasm.a
+NAME	= 	libasm.a
 
-SRC_A	= ft_strlen.s ft_strcpy.s ft_strcmp.s ft_write.s ft_read.s ft_strdup.s
+SRC		= 	ft_atoi_base.s ft_read.s ft_strcmp.s ft_strcpy.s ft_strdup.s \
+			ft_strlen.s ft_write.s
 
-SRC_B	= bonus/ft_atoi_base.s
+TEST	= 	test
 
-TEST	= test
+MAIN 	= 	testmain.c bonus_testmain.c
 
-MAIN 	= testmain.c bonus_testmain.c
+OBJ		= 	$(SRC:.s=.o)
 
-ifdef WITH_BONUS
-OBJ		= $(SRC_A:.s=.o) $(SRC_B:.s=.o)
-else
-OBJ		= $(SRC_A:.s=.o)
-endif
+NSM		= 	nasm -f macho64
 
-NSM		= nasm -f macho64
-
-FLAGS	= -Wall -Wextra -Werror 
+FLAGS	= 	-Wall -Wextra -Werror 
 
 # COLORS
 BLUE	= 	\033[38;5;27m
@@ -52,12 +47,7 @@ $(NAME): $(OBJ)
 	@echo "\n\t   $(BLUE)$(LBOR)Compiling: $<$(RBOR)$(RES)\n"
 	@$(NSM) $<
 
-bonus: $(SRC_B:.s=.o) $(OBJ)
-	@echo "\n\t   $(PINK)$(LBOR)Compiling bonus files$(RBOR)$(RES)\n"
-	@$(MAKE) WITH_BONUS=1 all
-	@$(MAKE) test
-
-test: $(MAIN) $(NAME)
+test: $(MAIN) $(NAME) $(OBJ)
 	@echo "\n\t   $(TURQ)$(LBOR)Compiling test$(RBOR)\n"
 	@gcc $(FLAGS) -L. -lasm -lc -o $(TEST) $(MAIN)
 	@echo ""
@@ -87,9 +77,4 @@ re:
 	@$(MAKE) fclean
 	@$(MAKE) all
 
-re_bonus:
-	@echo "\n\t   $(BLUE)$(LBOR)Aww here we go again$(RBOR)$(RES)\n"
-	@$(MAKE) fclean
-	@$(MAKE) bonus
-
-.PHONY: all clean fclean re test bonus
+.PHONY: all clean fclean re test

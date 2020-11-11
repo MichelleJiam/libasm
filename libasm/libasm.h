@@ -6,19 +6,20 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/25 16:47:35 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/11/04 15:22:45 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/11/11 16:50:52 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBASM_H
 # define LIBASM_H
-# include <stddef.h>
-# include <string.h>
-# include <stdio.h>
-# include <unistd.h>
-# include <fcntl.h>
 # include <errno.h>
+# include <fcntl.h>
+# include <limits.h>
+# include <stddef.h>
+# include <stdio.h>
 # include <stdlib.h>
+# include <string.h>
+# include <unistd.h>
 
 # define TURQ "\033[38;5;37m"
 # define RED "\033[31m"

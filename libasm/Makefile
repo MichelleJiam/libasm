@@ -6,14 +6,14 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/06/23 13:52:25 by mjiam         #+#    #+#                  #
-#    Updated: 2020/11/11 16:49:51 by mjiam         ########   odam.nl          #
+#    Updated: 2020/11/11 16:56:38 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= 	libasm.a
 
-SRC		= 	ft_atoi_base.s ft_read.s ft_strcmp.s ft_strcpy.s ft_strdup.s \
-			ft_strlen.s ft_write.s
+SRC		= 	ft_atoi_base.s ft_strchr.s ft_read.s ft_strcmp.s ft_strcpy.s \
+			ft_strdup.s ft_strlen.s ft_write.s
 
 TEST	= 	test
 

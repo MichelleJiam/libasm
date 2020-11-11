@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/06/25 16:47:35 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/11/11 16:50:52 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/11/11 16:58:28 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int		bonus(char *av);
 
 /* bonuses */
 int		ft_atoi_base(const char *str, int str_base);
+char	*ft_strchr(const char *str, int c);
 
 /*
 ** ft_atoi_base:

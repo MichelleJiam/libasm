@@ -2,13 +2,11 @@
 42/Codam libasm, an introduction to assembly language
 
 ## Description
-A small collection of basic functions rewritten in 64-bit ASM using Intel syntax. Compilation is done with nasm.
+A small collection of basic C functions rewritten in 64-bit ASM using Intel syntax.
+Compilation is done with nasm.
+Functions that I rewrote: atoi_base, strchr, read, strcmp, strcpy, strdup, strlen, write
 
-"bonus" functions consist of an assembly implementation of atoi_base (atoi with base parameter), with linked-list manipulation functions to be added later.
-
-A main containing tests is included.
+A main containing tests for all functions is included.
 
 ## Commands
-Run ```make test``` to compile and see the list of test commands.
-
-Run ```make bonus``` to compile with bonus functions.
+Run ```make test``` to compile the library and see the list of test commands.

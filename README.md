@@ -4,7 +4,15 @@
 ## Description
 A small collection of basic C functions rewritten in 64-bit ASM using Intel syntax.
 Compilation is done with nasm.
-Functions that I rewrote: atoi_base, strchr, read, strcmp, strcpy, strdup, strlen, write
+Functions:
+* atoi_base
+* strchr
+* read
+* strcmp
+* strcpy
+* strdup
+* strlen
+* write
 
 A main containing tests for all functions is included.
 
